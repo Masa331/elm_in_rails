@@ -66,3 +66,12 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Masa33
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
+## Links and Thanks :heart:
+
+- [New Rails 5 + Elm gem](https://github.com/NoRedInk/npm-elm-rails)
+- [Old Elm + Rails 3.2 gem](https://github.com/NoRedInk/elm_sprockets)
+- [Gist for integrating Elm in Rails 4.2](https://gist.github.com/tmichel/4ac68024b30b77594dac) - I think this should work with Rails 5 with little tweaking
+- [Other gist for older Rails intergation 1](https://gist.github.com/rtfeldman/db7b121100b6c6ff435b)
+- [Other gist for older Rails intergation 2](https://gist.github.com/rtfeldman/e191ee54cc00f8632ade)
+- [Gem with Elm compiler 1](https://github.com/eunomie/ruby-elm)
+- [Gem with Elm compiler 2](https://github.com/fbonetti/ruby-elm-compiler)
