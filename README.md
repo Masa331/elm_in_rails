@@ -56,6 +56,8 @@ And lastly, somewhere in views:
 
 ```
 
+Also, you have to `elm package install` inside your `app/assets/javascripts`. It will add `elm-package.json` and `elm-stuff` directory where compilation will happen. I suggest to add `elm-stuff` in your gitignore.
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/Masa331/elm_in_rails.
