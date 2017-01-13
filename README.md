@@ -34,7 +34,7 @@ This is how some application.js with Elm files could look like.
 ```
 
 This is how Main.elm file looks with dependency explicitly stated with Sprockets directive:
-```
+```elm
 ....
 --= depend_on Dependency
 
@@ -45,7 +45,7 @@ import Html exposing (..)
 ```
 
 And lastly, somewhere in views:
-```
+```html
 <div id="elm-container">
 </div>
 
