@@ -2,23 +2,28 @@ require "elm-compiler"
 
 module ElmInRails
   class Transformer
-    ELM_MAKE_PATH = "#{`npm bin`.strip}/elm-make"
-
-    class CompileError < StandardError; end
-
     def initialize(options = {})
       @options = options
     end
 
     def call(input)
       input_file = input[:filename]
+      dependencies = Set.new input[:dependencies]
 
-      res =
-      Dir.chdir(elm_package_root(input_file)) do
-        ::Elm::Compiler.compile(input_file)
-      end
+      compiled_elm =
+        Dir.chdir(elm_package_root(input_file)) do
+          ::Elm::Compiler.compile(input_file)
+        end
 
-      { data: res }
+      Dir.glob("#{input[:load_path]}/**/*.elm")
+        .reject { |dep| dep.include? 'elm-stuff' }
+        .each do |dep|
+          _, deps = input[:environment].resolve! dep
+          dependencies.merge deps
+        end
+
+      { data: compiled_elm,
+        dependencies: dependencies }
     end
 
     private
