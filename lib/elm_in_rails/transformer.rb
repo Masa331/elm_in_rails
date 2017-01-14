@@ -2,10 +2,6 @@ require "elm-compiler"
 
 module ElmInRails
   class Transformer
-    ELM_MAKE_PATH = "#{`npm bin`.strip}/elm-make"
-
-    class CompileError < StandardError; end
-
     def initialize(options = {})
       @options = options
     end
