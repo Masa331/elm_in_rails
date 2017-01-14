@@ -19,12 +19,10 @@ You also have to have Elm compiler installed through NPM on your system. Look he
 
 ## Usage
 
-Put your regular Elm files in `app/assets/javascripts` directory and require Elm files in `application.js` manifest as you would require other JS files.
+Install Elm package in `app/assets/javascripts` and put all your Elm files there. The compilation will happen in `elm-stuff` which i suggest to put into your gitignore.
 
-If you have any dependencies in you Elm files they will compile allright but in order to recompile on any change in them you need to state all dependencies explicitly in the Main file.
-I hope this is bearable for small projects. If you can't do this please let me know or open pull request.
+Now require Elm files in `application.js` manifest as you would require other JS files:
 
-This is how some application.js with Elm files could look like.
 ```
 ....
 //
@@ -33,18 +31,7 @@ This is how some application.js with Elm files could look like.
 //= require Main
 ```
 
-This is how Main.elm file looks with dependency explicitly stated with Sprockets directive:
-```elm
-....
---= depend_on Dependency
-
-module Main exposing (..)
-
-import Html exposing (..)
-...
-```
-
-And lastly, somewhere in views:
+And now somewhere in views:
 ```html
 <div id="elm-container">
 </div>
@@ -56,7 +43,9 @@ And lastly, somewhere in views:
 
 ```
 
-Also, you have to `elm package install` inside your `app/assets/javascripts`. It will add `elm-package.json` and `elm-stuff` directory where compilation will happen. I suggest to add `elm-stuff` in your gitignore.
+### Dependency changes tracking
+
+If your Elm files have any dependencies they should be automatically tracked by Sprockets and recompilation on change should work out of box. It's currently implemented very simply - all Elm files in same directory or subdirectories are watched for changes.
 
 ## Contributing
 
