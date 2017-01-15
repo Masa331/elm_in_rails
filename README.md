@@ -1,4 +1,4 @@
-# ElmInRails
+# ElmInRails [![Build Status](https://travis-ci.org/Masa331/elm_in_rails.svg?branch=master)](https://travis-ci.org/Masa331/elm_in_rails)
 
 This is a very simple glue for using Elm in Rails 5 asset pipeline.
 
