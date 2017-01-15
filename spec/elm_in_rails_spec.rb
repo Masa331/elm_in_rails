@@ -45,9 +45,9 @@ describe ElmInRails do
     transformed = ElmInRails::Transformer.new.call(input)
 
     dependencies =
-      ["file-digest:///home/masa331/pracovni/code/ruby/elm_in_rails/spec/fixtures/Main.elm",
-       "file-digest:///home/masa331/pracovni/code/ruby/elm_in_rails/spec/fixtures/subdirectory/AnotherDependency.elm",
-       "file-digest:///home/masa331/pracovni/code/ruby/elm_in_rails/spec/fixtures/Dependency.elm"]
+      ["file-digest://#{File.expand_path('spec/fixtures/Main.elm')}",
+       "file-digest://#{File.expand_path('spec/fixtures/subdirectory/AnotherDependency.elm')}",
+       "file-digest://#{File.expand_path('spec/fixtures/Dependency.elm')}"]
 
     expect(transformed[:dependencies].to_a).to match_array dependencies
   end
